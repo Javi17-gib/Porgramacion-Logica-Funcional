@@ -74,12 +74,15 @@ header > nav > a{
     height: 100vh;
     position: fixed;
     z-index: 10;
-    background-image: url(/o0p.gif);
+    background-image: url(/Driving\ The\ Simpsons\ GIF\ -\ Find\ &\ Share\ on\ GIPHY.gif);
     background-size: 100% 100%;
     opacity: 0.5;
     top:0;
     left: 0;
-
+}
+nav{
+    text-align: center;
+    padding-top: 10px;
 }
 
 
