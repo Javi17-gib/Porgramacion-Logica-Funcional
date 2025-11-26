@@ -70,23 +70,49 @@ familia(X,Y):- descendiente(A,X), descendiente(A,B),descendiente(C,Y), descendie
 %Y = hylobatidae.
 
 %7- ¿Qué géneros comparten la misma subfamilia con Pan?
+categoria(genus, G), descendiente(homininae, T), descendiente(T, pan), descendiente(T, G), G \= pan.
+G = homo,
+T = hominini
 
 %8- ¿Cuál es el ancestro común más cercano entre Homo y Gorilla?
+descendiente(Anc, hominini), descendiente(Anc, gorillini).
+Anc = homininae.
+
 
 %9- ¿Es el orangután un homínido?
+descendiente(hominidae, X), descendiente(X, Y), descendiente(Y, orangutan).
+X = ponginae,
+Y = pongo.
 
 %10- ¿Cuáles son todas las especies que pertenecen a la familia Hominidae?
+ descendiente(hominidae, S), descendiente(S, G), descendiente(G, E).
+S = ponginae,
+G = pongo,
+E = orangutan.
 
 %11- ¿Qué géneros son hermanos taxonómicos de Homo?
+descendiente(hominini, G), categoria(genus, G), G \= homo.
+G = pan 
 
 %12 -¿Comparten Homo y Hylobates la misma familia?
+descendiente(F, homo), descendiente(F, hylobates).
+false.
 
 %13- ¿Cuáles son los descendientes directos de la subfamilia Homininae?
+descendiente(homininae, X).
+X = hominini ;
+X = gorillini.
 
 %14- ¿Qué géneros están bajo la familia Hominidae?
+descendiente(hominidae, S), descendiente(S, T), descendiente(T, G), categoria(genus, G).
+G = homo ;
+G = pan ;
+G = gorilla ;
+G = pongo.
 
 %15- ¿Cuál es la ruta taxonómica completa desde Homo hasta la superfamilia?
-
+descendiente(hominini, homo), descendiente(homininae, hominini), descendiente(hominidae, homininae), descendiente(hominoidea, hominidae).
+true
 
 
 
